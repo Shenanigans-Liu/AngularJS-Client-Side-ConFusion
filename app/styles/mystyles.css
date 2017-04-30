@@ -1,0 +1,189 @@
+.row-header {
+  margin: 0px auto;
+  padding: 0px 0px;
+}
+.row-content {
+  margin: 0px auto;
+  border-bottom: 1px ridge;
+  padding: 30px 0px;
+  min-height: 300px;
+}
+.row-footer {
+  margin: 0px auto;
+  padding: 20px 0px;
+  background-color: #AfAfAf;
+}
+.jumbotron {
+  margin: 0px auto;
+  padding: 70px 30px;
+  background-color:#415fa5;
+  color: floralwhite;
+}
+.carousel {
+  background: #1a237e;
+}
+.carousel .item {
+  height: 300px;
+}
+.carousel .item img {
+  left: 0;
+  min-height: 300px;
+  position: absolute;
+  top: 0;
+}
+
+.nav-pills {
+    color:black;
+}
+
+.navbar-collapse {
+  border-top: 0px solid #808080 !important;
+}
+.navbar-toggle {
+  border: 0px solid #000000;
+  padding-top:12px;
+  padding-bottom:12px;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #292929;
+  width: 25px;
+  height: 3px;
+  border-radius: 1px;
+}
+
+.navbar-toggle:hover{
+  background-color:#fcfcfc !important;
+}
+.navbar-toggle:focus{
+  background-color:#fcfcfc !important;
+}
+
+.navbar-inverse{
+  background: #fcfcfc;
+  font-size: 12pt;
+  font-family: arial;
+  text-align: center;
+  border-bottom:1px solid #415fa5;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color:#262626;
+}
+.navbar-inverse .navbar-nav > .active > a {
+  background: #415fa5;
+  color:floralwhite; 
+}
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background: #415fa5;
+  color:floralwhite; 
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: floralwhite;  /*Sets the text hover color on navbar*/
+    background: #415fa5;
+}
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background: #415fa5;
+  color:floralwhite; 
+}
+
+address {
+  color: #0f0f0f;
+  font-size: 80%;
+  margin: 0px;
+}
+body {
+  align-content: center;
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
+}
+.tab-content {
+  border-bottom: 0px solid #dddddd;
+  border-left: 0px solid #dddddd;
+  border-right: 0px solid #dddddd;
+  padding: 3px;
+}
+
+#menuMedia {
+  padding: 15px 0px 15px 0px;
+  border: 1px solid #f2f2f2;
+  background-color: #fdfdfd;
+}
+#profileMedia {
+  padding: 0px 0px 15px;
+}
+.affix {
+  top: 100px;
+}
+#carouselButtons {
+  bottom: 0px;
+  position: absolute;
+  right: 0px;
+}
+.navbar-right {
+    cursor: pointer;
+}
+#register {
+    cursor: pointer;
+}
+.fa-heart {
+    color:dimgray;
+    cursor:pointer;
+    padding-top: 50px;
+}
+.fa-heart:hover {
+    color: crimson;
+    cursor:pointer;
+}
+.fa-times {
+    padding: 15px 30px 0px 0px;
+    color:dimgray;
+    cursor:pointer;
+}
+.fa-times:hover {
+    color: crimson;
+    cursor:pointer;
+}
+
+#deleteComment {
+    cursor:pointer;
+    color:crimson;
+}
+
+#success-alert {
+    position:fixed;
+    top: 25%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 260px;
+    text-align: center;
+}
+
+#login-alert {
+    position:fixed;
+    top: 25%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 260px;
+    text-align: center;
+}
+#login-alert2 {
+    position:relative;
+}
+div.polaroid {
+    border: 1px solid #ebebeb;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav-pills > li > a {
+    color: black;
+    border:1px solid #eeeeee;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color:whitesmoke;
+    background-color:#bebebe;
+}

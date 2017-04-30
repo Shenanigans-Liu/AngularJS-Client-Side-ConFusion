@@ -1,0 +1,67 @@
+<div style="background-color:#fbfbfb">
+<div class="container">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class="active">Menu</li>
+               </ul>
+            </div>
+            <div class="col-xs-12" ng-if="!showMenu">
+                <h3>{{message}}</h3>
+            </div>
+            <div class="col-xs-12" ng-if="showMenu">
+                <button ng-click="toggleDetails()" class="btn btn-primary pull-right col-xs-12 col-sm-2" type="button">
+                    {{showDetails ? 'Hide Details':'Show Details'}}
+                </button>
+                <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation" ng-class="{active:isSelected(1)}">
+                    <a style="cursor:pointer;" ng-click="select(1)"
+                     aria-controls="all menu"
+                     role="tab">All Dishes</a></li>
+                    <li role="presentation" ng-class="{active:isSelected(2)}">
+                    <a style="cursor:pointer" ng-click="select(2)"
+                     aria-controls="appetizers"
+                     role="tab">Appetizers</a></li>
+                    <li role="presentation" ng-class="{active:isSelected(3)}">
+                    <a style="cursor:pointer" ng-click="select(3)"
+                     aria-controls="mains"
+                     role="tab">Mains</a></li>
+                    <li role="presentation" ng-class="{active:isSelected(4)}">
+                    <a style="cursor:pointer" ng-click="select(4)"
+                     aria-controls="desserts"
+                     role="tab">Desserts</a></li>
+                </ul>
+                <div class="tab-content">
+                    <p style="padding:0px;"></p>
+                    <ul class="media-list tab-pane fade in active" >
+                    <li class="media" id="menuMedia" ng-repeat="dish in dishes | filter:filtText">
+                        <a ui-sref="app.dishdetails({id: dish._id})" style="color:black">
+                        <div class="col-xs-12 col-sm-10">
+                            <div class="media-left media-middle">
+                                <img class="media-object img-thumbnail"
+                                 ng-src={{dish.image}} alt="Uthappizza">
+                            </div>
+                            <div class="media-body">
+                                <h4 style="font-size:15pt" class="media-heading">{{dish.name}}
+                                 <span class="label label-danger">{{dish.label}}</span>
+                                 <span class="badge">{{dish.price/100 | currency}}</span>
+                                </h4>
+                                <p ng-show="showDetails" style="padding-top:5px">{{dish.description}}</p>
+                            </div>
+                        </div>
+                        </a>
+                        <div class="col-sm-1"></div>
+                        <div class="col-xs-12 col-sm-1">
+                            <i class="fa fa-heart fa-lg" ng-click=addToFavorites(dish._id) aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<div class="alert alert-success" role="alert" id="success-alert" style="display:none"><span><i class="fa fa-check" aria-hidden="true"></i></span><Strong> Added to My Favorite</Strong></div>
+<div class="alert alert-warning" role="alert" id="login-alert" style="display:none"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><Strong> Log in to Add Your Favorites</Strong></div>
+
+</div>
+
+    

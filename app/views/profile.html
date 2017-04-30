@@ -1,0 +1,90 @@
+<div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class="active">Profile</li>
+               </ul>
+            </div>
+        </div>
+        <div class="row col-xs-12">
+           <h3>My Favorites</h3>
+            <hr>
+        </div>
+        <p style="padding:30px"></p>
+        <div ng-show="!loggedIn" class="col-xs-12 col-sm-5 alert alert-warning alert-dismissable fade in" role="alert" id="login-alert2">
+            <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+            <Strong> Log in to display your favorite dishes</Strong>
+        </div>
+        <div class="row" style="padding:0px 20px" ng-show="loggedIn">
+            <div class="col-xs-12" ng-if="!showMenu">
+                <h4>{{message}}</h4>
+            </div>
+            <div class="col-xs-12" ng-if="showMenu && !isEmptyFav">
+                <ul class="media-list">
+                    <li id="profileMedia" ng-repeat="dish in favorites | filter:filtText">
+                        <div class="polaroid media" style="padding:10px 10px 10px 10px">
+                        <div class="media-left media-middle">
+                            <a ui-sref="app.dishdetails({id: dish._id})">
+                            <img class="media-object img-thumbnail"
+                            ng-src={{dish.image}} alt="Uthappizza">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{dish.name}}
+                            <span class="label label-danger label-xs">{{dish.label}}</span>
+                            <span class="badge">{{dish.price/100 | currency}}</span></h4>
+                            <i ng-click="deleteFavorite(dish._id)" class="fa fa-times fa-lg pull-right" aria-hidden="true"></i>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p style="padding:20px"></p>
+        <div class="row col-xs-12">
+           <h3>My Comments</h3>
+            <hr>
+        </div>
+        <p style="padding:30px"></p>
+        <div ng-show="!loggedIn" class="col-xs-12 col-sm-5 alert alert-warning  alert-dismissable fade in" role="alert" id="login-alert2">
+            <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+            <Strong> Log in to display your comments</Strong>
+        </div>
+        <div class="row" style="padding:20px 20px" ng-show="loggedIn">
+            <div class="col-xs-12" ng-if="!showMenu">
+                <h4>{{message}}</h4>
+            </div>
+            <div class="col-xs-12" ng-if="showMenu && !isEmptyComment">
+                <div>
+                <ul class="media-list">
+                    <li id="profileMedia" ng-repeat="element in commentedDish | filter:filtText">
+                        <div class="polaroid media" style="padding:20px 0px 0px 10px">
+                        <div class="media-left">
+                            <a ui-sref="app.dishdetails({id: element._id})">
+                            <img class="media-object img-thumbnail" ng-src={{element.image}}></a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{element.name}}
+                            </h4>
+                            <blockquote  ng-repeat="comment in element.comments">
+                                <span ng-repeat="s in comment.star">
+                                    <i class="fa fa-star fa-lg" style="color:#f2f21f"></i>
+                                </span>
+                                <h5>{{comment.comment}}</h5>
+                                <footer>
+                                    {{comment.postedBy.firstname}} {{comment.postedBy.lastname}}, {{comment.updatedAt | date:'MMM.dd, yyyy'}}
+                                    <span> &nbsp|&nbsp </span>
+                                    <a id="deleteComment" ng-click="deleteComment(element._id, comment._id)" aria-hidden="true">Delete</a>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+</div>
