@@ -64,8 +64,10 @@
   font-size: 12pt;
   font-family: arial;
   text-align: center;
-  border-bottom:1px solid #415fa5;
+  border-bottom:0px solid #415fa5;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 }
+
 
 .navbar-inverse .navbar-nav > li > a {
     color:#262626;
@@ -105,7 +107,7 @@ body {
 }
 
 #menuMedia {
-  padding: 15px 0px 15px 0px;
+  padding: 15px 0px 15px 15px;
   border: 1px solid #f2f2f2;
   background-color: #fdfdfd;
 }
@@ -125,15 +127,6 @@ body {
 }
 #register {
     cursor: pointer;
-}
-.fa-heart {
-    color:dimgray;
-    cursor:pointer;
-    padding-top: 50px;
-}
-.fa-heart:hover {
-    color: crimson;
-    cursor:pointer;
 }
 .fa-times {
     padding: 15px 30px 0px 0px;
@@ -186,4 +179,50 @@ div.polaroid {
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color:whitesmoke;
     background-color:#bebebe;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding:0px 0px 0px 0px;
+    z-index: 1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fdfdfd;
+    min-width: 50px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#moreinfo {
+    background-color:#fdfdfd;
+    color:#7b7b7b;
+    border: 1px solid #f2f2f2;
+    padding:5px 10px 5px 10px;
+}
+#moreinfo:hover{
+    background-color:#ebebeb;
+}
+.fa-heart, .fa-comment {
+    color:dimgray;
+    cursor:pointer;
+    padding:15px 30px 15px 30px;
+    border-bottom: 1px ridge;
+}
+.fa-heart:hover {
+    color: crimson;
+    cursor:pointer;
+    background-color: #ebebeb;
+}
+.fa-comment:hover {
+    color: black;
+    cursor:pointer;
+    background-color: #ebebeb
 }

@@ -34,12 +34,14 @@
                 <div class="tab-content">
                     <p style="padding:0px;"></p>
                     <ul class="media-list tab-pane fade in active" >
-                    <li class="media" id="menuMedia" ng-repeat="dish in dishes | filter:filtText">
-                        <a ui-sref="app.dishdetails({id: dish._id})" style="color:black">
-                        <div class="col-xs-12 col-sm-10">
+                    <li ng-repeat="dish in dishes | filter:filtText">
+                        <div class="media col-xs-11" id="menuMedia">
                             <div class="media-left media-middle">
+                                <a ui-sref="app.dishdetails({id: dish._id})" style="color:black">
                                 <img class="media-object img-thumbnail"
-                                 ng-src={{dish.image}} alt="Uthappizza">
+                                     ng-src={{dish.image}} alt="Uthappizza">
+                                </a>
+                                    
                             </div>
                             <div class="media-body">
                                 <h4 style="font-size:15pt" class="media-heading">{{dish.name}}
@@ -49,10 +51,12 @@
                                 <p ng-show="showDetails" style="padding-top:5px">{{dish.description}}</p>
                             </div>
                         </div>
-                        </a>
-                        <div class="col-sm-1"></div>
-                        <div class="col-xs-12 col-sm-1">
-                            <i class="fa fa-heart fa-lg" ng-click=addToFavorites(dish._id) aria-hidden="true"></i>
+                        <div class="col-xs-1 pull-right dropdown">
+                            <button id="moreinfo"><span><i class="fa fa-ellipsis-h fa-lg"></i></span></button>
+                            <div class="dropdown-content">
+                                <div><span><i class="fa fa-heart fa-lg" ng-click="addToFavorites(dish._id)" aria-hidden="true"></i></span></div>
+                                <div><span><i class="fa fa-comment fa-lg" ui-sref="app.dishdetails({id: dish._id})" aria-hidden="true"></i></span></div>
+                            </div>
                         </div>
                     </li>
                     </ul>
